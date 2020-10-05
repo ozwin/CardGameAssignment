@@ -1,0 +1,7 @@
+C:\Projects\CardGame\CardGame\bin\Debug\CardGame.exe.config
+C:\Projects\CardGame\CardGame\bin\Debug\CardGame.exe
+C:\Projects\CardGame\CardGame\bin\Debug\CardGame.pdb
+C:\Projects\CardGame\CardGame\obj\Debug\CardGame.csprojResolveAssemblyReference.cache
+C:\Projects\CardGame\CardGame\obj\Debug\CardGame.csproj.CoreCompileInputs.cache
+C:\Projects\CardGame\CardGame\obj\Debug\CardGame.exe
+C:\Projects\CardGame\CardGame\obj\Debug\CardGame.pdb
