@@ -5,3 +5,10 @@ C:\Projects\CardGame\CardGame\obj\Debug\CardGame.csprojResolveAssemblyReference.
 C:\Projects\CardGame\CardGame\obj\Debug\CardGame.csproj.CoreCompileInputs.cache
 C:\Projects\CardGame\CardGame\obj\Debug\CardGame.exe
 C:\Projects\CardGame\CardGame\obj\Debug\CardGame.pdb
+C:\Projects\GitHub\CardGameAssignment\CardGame\bin\Debug\CardGame.exe.config
+C:\Projects\GitHub\CardGameAssignment\CardGame\bin\Debug\CardGame.exe
+C:\Projects\GitHub\CardGameAssignment\CardGame\bin\Debug\CardGame.pdb
+C:\Projects\GitHub\CardGameAssignment\CardGame\obj\Debug\CardGame.csprojResolveAssemblyReference.cache
+C:\Projects\GitHub\CardGameAssignment\CardGame\obj\Debug\CardGame.csproj.CoreCompileInputs.cache
+C:\Projects\GitHub\CardGameAssignment\CardGame\obj\Debug\CardGame.exe
+C:\Projects\GitHub\CardGameAssignment\CardGame\obj\Debug\CardGame.pdb

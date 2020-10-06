@@ -30,4 +30,11 @@ namespace CardGame.Constants
         KING = 13
 
     }
+    public static class GameOption
+    {
+        public const int PICK = 1;
+        public const int SHUFFLE = 2;
+        public const int RESTART = 3;
+        public const int QUIT = 4;
+    }
 }

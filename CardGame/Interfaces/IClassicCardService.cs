@@ -1,4 +1,4 @@
-﻿using CardGame.Constants;
+﻿using CardGame.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace CardGame.Interfaces
 {
-    public interface ICardService<T>
+   public interface IClassicCardService: ICardService<Card>
     {
-        Stack<T> GetCardSet();
-        void DisplayCard(T card);
-
     }
 }

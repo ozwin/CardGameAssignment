@@ -42,11 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\EnumConstants.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Entities\Card.cs" />
     <Compile Include="Entities\Deck.cs" />
     <Compile Include="Helpers\StackExtension.cs" />
+    <Compile Include="Interfaces\ICard.cs" />
     <Compile Include="Interfaces\ICardService.cs" />
+    <Compile Include="Interfaces\IClassicCardService.cs" />
     <Compile Include="Interfaces\IDeckService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

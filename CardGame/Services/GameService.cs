@@ -1,4 +1,5 @@
-﻿using CardGame.Entities;
+﻿using CardGame.Constants;
+using CardGame.Entities;
 using CardGame.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
-    public class GameService
+    public class GameService : IDisposable
     {
         public GameService()
         {
@@ -16,30 +17,34 @@ namespace CardGame.Services
         }
         public void Run()
         {
-            ICardService<Card> _cards = new ClassicCardService();
-            IDeckService<Card> _deckService = new DeckService<Card>(_cards.GetCardSet());
-            Console.ForegroundColor = ConsoleColor.Green;
+            ICardService<Card> cardService = new ClassicCardService();
+            IDeckService<Card> deckService = new DeckService<Card>(cardService.GetCardSet());
             Console.WriteLine("Pick a option");
             while (true)
             {
-                Console.WriteLine("1) Pick a card  2)Shuffle the deck 3) Restart the game");
                 try
                 {
-                    int inputOption = int.Parse(Console.ReadLine());
-                    switch (inputOption)
+                    int gameMode = ReadUserResponse();
+                    switch (gameMode)
                     {
-                        case 1:
-                            var card = _deckService.GetTopCard();
-                            Console.WriteLine($"{card.Suit} and {card.Type}");
+                        case GameOption.PICK:
+                            var card = deckService.GetTopCard();
+                            cardService.DisplayCard(card);
+                            var deckSize = deckService.GetCount();
+                            Console.WriteLine($"{deckSize} - cards left in the deck.");
                             break;
-                        case 2:
-                            _deckService.Shuffle();
+                        case GameOption.SHUFFLE:
+                            deckService.Shuffle();
+                            Console.WriteLine("Deck shuffled succesfully!.");
                             break;
-                        case 3:
-                            _deckService.ResetDeck(_cards.GetCardSet());
+                        case GameOption.RESTART:
+                            deckService.ResetDeck(cardService.GetCardSet());
+                            Console.WriteLine("New game!!.");
                             break;
+                        case GameOption.QUIT:
+                            return;
                         default:
-                            throw new InvalidOperationException("Please choose the options from the meu");
+                            throw new InvalidOperationException("Please choose the options from the menu");
                     }
 
                 }
@@ -51,5 +56,30 @@ namespace CardGame.Services
                 }
             }
         }
+        public void Dispose()
+        {
+
+        }
+        #region private Methods
+        private int ReadUserResponse()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("1) Pick a card  2)Shuffle the deck 3) Restart the game 4)Quit");
+
+            try
+            {
+                int inputOption = int.Parse(Console.ReadLine());
+                return inputOption;
+            }
+            catch (FormatException exception)
+            {
+                throw new FormatException("Please enter only numbers.");
+            }
+            catch (Exception exception)
+            {
+                throw new Exception("Unhandled Exception occured.");
+            }
+        }
+        #endregion
     }
 }

@@ -9,9 +9,10 @@ namespace CardGame.Interfaces
 {
     public interface IDeckService<T> :IDisposable
     {
-        Card GetTopCard();
+        T GetTopCard();
         void Shuffle();
         void ResetDeck(Stack<T> cards);
+        int GetCount();
 
     }
 }

@@ -15,7 +15,7 @@ namespace CardGame
         static void Main(string[] args)
         {
             GameService service = new GameService();
-           
+            service.Run();
         }
     }
 }

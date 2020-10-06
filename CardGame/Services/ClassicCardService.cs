@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
-    public class ClassicCardService:ICardService<Card>
+    public class ClassicCardService: IClassicCardService
     {
         public ClassicCardService()
         {
@@ -26,6 +26,10 @@ namespace CardGame.Services
                 }
             }
             return cards;
+        }
+        public void DisplayCard(Card card)
+        {
+            Console.WriteLine($"{card.Suit} and {card.Type}");
         }
     }
 }

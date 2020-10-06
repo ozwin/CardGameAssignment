@@ -18,30 +18,41 @@ namespace CardGame.Services
             _deck = IntializeDeck(cards);
             Shuffle();
         }
-        public Card GetTopCard()
+        public T GetTopCard()
         {
-            return _deck.Cards.Pop();
+            if (_deck.Cards.Count > 0)
+                return _deck.Cards.Pop();
+            throw new Exception("No cards left in deck! Choose the option 3 to reset the deck.");
         }
         public void Shuffle()
         {
-            _deck.Cards = _deck.Cards.Shuffle();
-        }
-        public Deck<T> IntializeDeck(Stack<T> cards)
-        {
-            Deck<T> deck = new Deck<T>();
-            deck.Cards = cards;
-            return deck;
+            if (_deck.Cards.Count > 0)
+                _deck.Cards = _deck.Cards.Shuffle();
+            else
+                throw new Exception("No cards left in deck for shuffling! Choose the option 3 to reset the deck.");
         }
         public void ResetDeck(Stack<T> cards)
         {
             _deck.Cards.Clear();
             _deck.Cards = cards;
         }
+        public int GetCount()
+        {
+            return _deck.Cards.Count;
+        }
         public void Dispose()
         {
             _deck.Cards.Clear();
             _deck = null;
         }
+        #region private mthods
+        private Deck<T> IntializeDeck(Stack<T> cards)
+        {
+            Deck<T> deck = new Deck<T>();
+            deck.Cards = cards;
+            return deck;
+        }
+        #endregion
 
     }
 }
