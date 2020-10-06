@@ -2,10 +2,6 @@
 using CardGame.Entities;
 using CardGame.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
@@ -53,7 +49,6 @@ namespace CardGame.Services
                         default:
                             throw new InvalidOperationException("Please choose the options from the menu");
                     }
-
                 }
                 catch (Exception exception)
                 {

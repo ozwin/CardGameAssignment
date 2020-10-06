@@ -3,9 +3,6 @@ using CardGame.Entities;
 using CardGame.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
@@ -32,7 +29,7 @@ namespace CardGame.Services
         }
         public override void DisplayCard(ClassicCard card)
         {
-            Console.WriteLine($"{card.Suit} and {card.Type}");
+            Console.WriteLine($"card suit :{card.Suit} , Value: {card.Type}");
         }
 
     }

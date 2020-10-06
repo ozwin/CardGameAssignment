@@ -1,12 +1,8 @@
-﻿using CardGame.Constants;
-using CardGame.Entities;
+﻿using CardGame.Entities;
 using CardGame.Helpers;
 using CardGame.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
