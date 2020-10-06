@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardGame.Interfaces
+namespace CardGame.Entities
 {
-    public interface ICard
+    public class UNOCard :Card
     {
     }
 }

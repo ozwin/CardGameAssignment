@@ -9,27 +9,28 @@ using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
-    public class ClassicCardService: IClassicCardService
+    public class ClassicCardService : CardService<ClassicCard>, IClassicCardService
     {
         public ClassicCardService()
         {
 
         }
-        public Stack<Card> GetCardSet()
+        public override Stack<ClassicCard> GetCardSet()
         {
-            var cards = new Stack<Card>();
+            var cards = new Stack<ClassicCard>();
             foreach (Suits suit in Enum.GetValues(typeof(Suits)))
             {
-                foreach (CardTypes cardType in Enum.GetValues(typeof(CardTypes)))
+                foreach (ClassicCardTypes cardType in Enum.GetValues(typeof(ClassicCardTypes)))
                 {
-                    cards.Push(new Card() { Suit = suit, Type = cardType });
+                    cards.Push(new ClassicCard() { Suit = suit, Type = cardType });
                 }
             }
             return cards;
         }
-        public void DisplayCard(Card card)
+        public override void DisplayCard(ClassicCard card)
         {
             Console.WriteLine($"{card.Suit} and {card.Type}");
         }
+
     }
 }

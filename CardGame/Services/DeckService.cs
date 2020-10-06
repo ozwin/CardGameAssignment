@@ -11,8 +11,10 @@ using System.Threading.Tasks;
 namespace CardGame.Services
 {
     public class DeckService<T> : IDeckService<T>
+        where T:ICard   // Type check for card type to restict from using other than card types
     {
         private Deck<T> _deck;
+        public DeckService() { }
         public DeckService(Stack<T> cards)
         {
             _deck = IntializeDeck(cards);

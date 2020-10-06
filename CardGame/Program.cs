@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace CardGame
 {
     class Program
-    {       
+    {
         static void Main(string[] args)
         {
             GameService service = new GameService();

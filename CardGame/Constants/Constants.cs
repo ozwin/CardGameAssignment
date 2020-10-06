@@ -13,7 +13,7 @@ namespace CardGame.Constants
         SPADES = 3,
         DIAMOND = 4
     }
-    public enum CardTypes
+    public enum ClassicCardTypes
     {
         ACE = 1,
         TWO = 2,

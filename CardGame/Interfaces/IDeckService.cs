@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace CardGame.Interfaces
 {
-    public interface IDeckService<T> :IDisposable
+    public interface IDeckService<T> : IDisposable 
+        where T : ICard
     {
         T GetTopCard();
         void Shuffle();

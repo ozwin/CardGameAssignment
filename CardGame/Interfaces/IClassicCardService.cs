@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CardGame.Interfaces
 {
-   public interface IClassicCardService: ICardService<Card>
+    public interface IClassicCardService : ICardService<ClassicCard>
     {
     }
 }

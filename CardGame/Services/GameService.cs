@@ -17,9 +17,9 @@ namespace CardGame.Services
         }
         public void Run()
         {
-            ICardService<Card> cardService = new ClassicCardService();
-            IDeckService<Card> deckService = new DeckService<Card>(cardService.GetCardSet());
-            Console.WriteLine("Pick a option");
+            IClassicCardService cardService = new ClassicCardService();
+            IDeckService<ClassicCard> deckService = new DeckService<ClassicCard>(cardService.GetCardSet());
+            Console.WriteLine("Choose a option from below menu");
             while (true)
             {
                 try
@@ -42,6 +42,7 @@ namespace CardGame.Services
                             Console.WriteLine("New game!!.");
                             break;
                         case GameOption.QUIT:
+                            deckService.Dispose();
                             return;
                         default:
                             throw new InvalidOperationException("Please choose the options from the menu");
