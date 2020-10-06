@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
+    /// <summary>
+    /// This class is responsible for the actions related to classic cards (52 cards)
+    /// </summary>
     public class ClassicCardService : CardService<ClassicCard>, IClassicCardService
     {
         public ClassicCardService()

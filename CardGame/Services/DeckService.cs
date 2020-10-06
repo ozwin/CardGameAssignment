@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
+    /// <summary>
+    /// This service handles the deck and operations related to a deck
+    /// </summary>
     public class DeckService<T> : IDeckService<T>
         where T:ICard   // Type check for card type to restict from using other than card types
     {

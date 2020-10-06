@@ -9,12 +9,18 @@ using System.Threading.Tasks;
 
 namespace CardGame.Services
 {
+    /// <summary>
+    /// This service handles the responsibilty of playing games based on the user input
+    /// </summary>
     public class GameService : IDisposable
     {
         public GameService()
         {
 
         }
+        /// <summary>
+        /// This method runs the classic card version game 
+        /// </summary>
         public void Run()
         {
             IClassicCardService cardService = new ClassicCardService();
@@ -62,11 +68,14 @@ namespace CardGame.Services
 
         }
         #region private Methods
+        /// <summary>
+        /// This method is intended for only numerics as user input
+        /// </summary>
+        /// <returns></returns>
         private int ReadUserResponse()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("1) Pick a card  2)Shuffle the deck 3) Restart the game 4)Quit");
-
+            Console.WriteLine("1) Pick a card  2)Shuffle the deck 3)Restart the game 4)Quit");
             try
             {
                 int inputOption = int.Parse(Console.ReadLine());
